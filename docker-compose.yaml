@@ -3,5 +3,14 @@ version: '3.9'
 services:
   web:
     build: .
+    image: django-todo-app:latest
+    container_name: python-cntr
     ports:
-      - "8001:8001"
+      - "8002:8001"
+  db:
+    image: mysql:5.7
+    container_name: mysql-cntr
+    environment:
+      MYSQL_ROOT_PASSWORD: 'test@123'
+    ports:
+      - "3308:3306"
